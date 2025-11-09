@@ -5,6 +5,43 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2024-11-09
+
+### Added - Phase 2: Client-Side Modernization (Initial)
+
+#### TypeScript Conversions
+
+- ✅ Converted `shared/js/gametypes.js` → `shared/ts/gametypes.ts`
+  - Modern TypeScript enums for Messages, Entities, Orientations
+  - Removed Underscore.js dependency
+  - Type-safe helper functions
+  - Proper interfaces and type definitions
+- ✅ Converted `client/js/timer.js` → `client/ts/timer.ts`
+  - Full type annotations
+  - Additional utility methods (reset, getRemaining, isRunning)
+  - Default parameters
+- ✅ Converted `client/js/animation.js` → `client/ts/animation.ts`
+  - AnimationFrame interface
+  - Type-safe callbacks
+  - Modern string methods
+- ✅ Converted `client/js/transition.js` → `client/ts/transition.ts`
+  - Type-safe transition system
+  - Better null safety
+  - Progress tracking method
+
+#### Documentation
+
+- ✅ Created PHASE2_PROGRESS.md tracking all conversions
+- ✅ Documented conversion patterns and benefits
+
+### Changed
+
+- 🔄 Established patterns for RequireJS → ES6 modules
+- 🔄 Established patterns for Class.extend() → native classes
+- 🔄 Beginning to remove Underscore.js usage
+
+---
+
 ## [1.0.0] - 2024-11-09
 
 ### Added - Phase 1: Infrastructure Modernization

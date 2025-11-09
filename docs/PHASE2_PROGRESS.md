@@ -196,14 +196,68 @@ if (isPlayer(kind)) {
 - ✅ Bubble and BubbleManager classes
 - ✅ Better HTML sanitization support
 
+#### 13. Exceptions (client/ts/exceptions.ts)
+
+**Original:** `client/js/exceptions.js` (11 lines)
+**Converted:** `client/ts/exceptions.ts` (32 lines)
+
+**Improvements:**
+
+- ✅ Extends native Error class properly
+- ✅ LootException with proper error handling
+- ✅ Stack trace preservation with Error.captureStackTrace
+- ✅ Type-safe error messages
+- ✅ Legacy export for backward compatibility
+
+#### 14. Utilities (client/ts/util.ts)
+
+**Original:** `client/js/util.js` (28 lines)
+**Converted:** `client/ts/util.ts` (51 lines)
+
+**Improvements:**
+
+- ✅ Removed Function.prototype.bind polyfill (native support)
+- ✅ Type-safe utility functions
+- ✅ Modern requestAnimationFrame with proper typing
+- ✅ FrameRequestCallback type
+- ✅ Window interface augmentation for legacy support
+
+#### 15. Chest Entity (client/ts/chest.ts)
+
+**Original:** `client/js/chest.js` (27 lines)
+**Converted:** `client/ts/chest.ts` (60 lines)
+
+**Improvements:**
+
+- ✅ Extends TypeScript Entity class
+- ✅ Type-safe open callback
+- ✅ Override keywords for inherited methods
+- ✅ Comprehensive JSDoc documentation
+
+#### 16. Player Class (client/ts/player.ts)
+
+**Original:** `client/js/player.js` (216 lines)
+**Converted:** `client/ts/player.ts` (339 lines)
+
+**Improvements:**
+
+- ✅ Extends TypeScript Character class
+- ✅ Full type safety for equipment and inventory
+- ✅ Type-safe loot system with LootException handling
+- ✅ Weapon and armor switching with proper timers
+- ✅ Invincibility system with timeout management
+- ✅ Type-safe callbacks for all events
+- ✅ Import and use gametypes rank checking functions
+- ✅ Better null safety throughout
+
 ## Statistics
 
 | Metric               | Count                        |
 | -------------------- | ---------------------------- |
-| Files Converted      | 12                           |
-| Original Lines       | 1,775                        |
-| TypeScript Lines     | 2,914                        |
-| Code Expansion       | +64% (documentation + types) |
+| Files Converted      | 16                           |
+| Original Lines       | 2,162                        |
+| TypeScript Lines     | 3,455                        |
+| Code Expansion       | +60% (documentation + types) |
 | Dependencies Removed | Underscore.js, jQuery        |
 | Type Safety          | 100%                         |
 
@@ -389,7 +443,11 @@ For each file to convert:
 │       ├── character.ts        ✅ Complete (686 lines)
 │       ├── mob.ts              ✅ Complete (28 lines)
 │       ├── pathfinder.ts       ✅ Complete (167 lines)
-│       └── bubble.ts           ✅ Complete (164 lines)
+│       ├── bubble.ts           ✅ Complete (164 lines)
+│       ├── exceptions.ts       ✅ Complete (32 lines)
+│       ├── util.ts             ✅ Complete (51 lines)
+│       ├── chest.ts            ✅ Complete (60 lines)
+│       └── player.ts           ✅ Complete (339 lines)
 └── docs/
     └── PHASE2_PROGRESS.md      📝 This file
 ```
@@ -428,5 +486,5 @@ None yet! All converted modules compile successfully.
 ---
 
 **Last Updated:** 2025-11-09
-**Progress:** 12/50+ files converted (~24%)
+**Progress:** 16/50+ files converted (~32%)
 **Status:** On track 🎯

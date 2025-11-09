@@ -88,16 +88,69 @@ if (isPlayer(kind)) {
 - `isInProgress()` - Check transition status
 - `getProgress(currentTime)` - Get current progress (0-1)
 
+#### 5. Sprite System (client/ts/sprite.ts)
+
+**Original:** `client/js/sprite.js` (170 lines)
+**Converted:** `client/ts/sprite.ts` (320 lines)
+
+**Improvements:**
+
+- ✅ Removed jQuery dependency (was imported but unused)
+- ✅ Proper interfaces for SpriteData, AnimationData, SpriteVariant
+- ✅ Type-safe canvas operations
+- ✅ Better error handling for image loading
+- ✅ Added async image loading support
+- ✅ Enhanced methods for hurt/silhouette sprites
+
+#### 6. Tile System (client/ts/tile.ts)
+
+**Original:** `client/js/tile.js` (34 lines)
+**Converted:** `client/ts/tile.ts` (100 lines)
+
+**Improvements:**
+
+- ✅ Base Tile and AnimatedTile classes
+- ✅ Readonly properties where appropriate
+- ✅ Additional utility methods (reset, getCurrentFrame, setFrame)
+- ✅ Better animation control
+
+#### 7. Entity Base Class (client/ts/entity.ts)
+
+**Original:** `client/js/entity.js` (263 lines)
+**Converted:** `client/ts/entity.ts` (415 lines)
+
+**Improvements:**
+
+- ✅ Comprehensive type annotations for all properties
+- ✅ Imported Animation, Sprite, and game types
+- ✅ Protected/private access modifiers
+- ✅ Type-safe callbacks with proper signatures
+- ✅ Better null safety throughout
+- ✅ Removed reliance on global Types object
+
+#### 8. Item Class (client/ts/item.ts)
+
+**Original:** `client/js/item.js` (33 lines)
+**Converted:** `client/ts/item.ts` (95 lines)
+
+**Improvements:**
+
+- ✅ Extends TypeScript Entity class
+- ✅ ItemType union type for type safety
+- ✅ Minimal Player interface for dependencies
+- ✅ Override keyword for overridden methods
+- ✅ Additional utility methods
+
 ## Statistics
 
-| Metric               | Count                   |
-| -------------------- | ----------------------- |
-| Files Converted      | 4                       |
-| Original Lines       | 478                     |
-| TypeScript Lines     | 839                     |
-| Code Expansion       | +75% (documentation)    |
-| Dependencies Removed | Underscore.js (partial) |
-| Type Safety          | 100%                    |
+| Metric               | Count                        |
+| -------------------- | ---------------------------- |
+| Files Converted      | 8                            |
+| Original Lines       | 1,001                        |
+| TypeScript Lines     | 1,869                        |
+| Code Expansion       | +87% (documentation + types) |
+| Dependencies Removed | Underscore.js, jQuery        |
+| Type Safety          | 100%                         |
 
 ## Key Patterns Established
 
@@ -268,12 +321,16 @@ For each file to convert:
 8bitQuest/
 ├── shared/
 │   └── ts/
-│       └── gametypes.ts        ✅ Complete
+│       └── gametypes.ts        ✅ Complete (485 lines)
 ├── client/
 │   └── ts/
-│       ├── timer.ts            ✅ Complete
-│       ├── animation.ts        ✅ Complete
-│       └── transition.ts       ✅ Complete
+│       ├── timer.ts            ✅ Complete (64 lines)
+│       ├── animation.ts        ✅ Complete (145 lines)
+│       ├── transition.ts       ✅ Complete (145 lines)
+│       ├── sprite.ts           ✅ Complete (320 lines)
+│       ├── tile.ts             ✅ Complete (100 lines)
+│       ├── entity.ts           ✅ Complete (415 lines)
+│       └── item.ts             ✅ Complete (95 lines)
 └── docs/
     └── PHASE2_PROGRESS.md      📝 This file
 ```

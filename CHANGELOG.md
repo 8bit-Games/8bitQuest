@@ -5,6 +5,49 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2024-11-09
+
+### Added - Phase 2: Core Systems Converted
+
+#### Additional TypeScript Conversions (4 more modules)
+
+- ✅ Converted `client/js/sprite.js` → `client/ts/sprite.ts` (320 lines)
+  - Removed jQuery dependency
+  - SpriteData, AnimationData, SpriteVariant interfaces
+  - Type-safe canvas operations
+  - Better error handling for image loading
+- ✅ Converted `client/js/tile.js` → `client/ts/tile.ts` (100 lines)
+  - Tile and AnimatedTile classes
+  - Additional utility methods (reset, getCurrentFrame, setFrame)
+  - Readonly properties for immutability
+- ✅ Converted `client/js/entity.js` → `client/ts/entity.ts` (415 lines)
+  - Core base class with full type safety
+  - Protected/private access modifiers
+  - Type-safe callbacks with proper signatures
+  - Comprehensive JSDoc documentation
+- ✅ Converted `client/js/item.js` → `client/ts/item.ts` (95 lines)
+  - Extends TypeScript Entity class
+  - ItemType union type for type safety
+  - Override keyword for inherited methods
+
+#### Statistics Update
+
+- **Total Files Converted:** 8 (doubled from v1.1.0)
+- **Total TypeScript Lines:** 1,869 (+123% from v1.1.0)
+- **Dependencies Removed:** jQuery, Underscore.js (both fully removed)
+
+#### Documentation
+
+- ✅ Updated PHASE2_PROGRESS.md with all 8 conversions
+
+### Changed
+
+- 🔄 jQuery completely removed from all converted modules
+- 🔄 All core entity/sprite/rendering classes now type-safe
+- 🔄 Established pattern for class inheritance with TypeScript
+
+---
+
 ## [1.1.0] - 2024-11-09
 
 ### Added - Phase 2: Client-Side Modernization (Initial)

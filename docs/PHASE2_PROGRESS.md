@@ -141,14 +141,69 @@ if (isPlayer(kind)) {
 - ✅ Override keyword for overridden methods
 - ✅ Additional utility methods
 
+#### 9. Character Base Class (client/ts/character.ts)
+
+**Original:** `client/js/character.js` (555 lines)
+**Converted:** `client/ts/character.ts` (686 lines)
+
+**Improvements:**
+
+- ✅ Base class for all moving entities (Player, Mob, NPC)
+- ✅ Full type safety for movement, pathfinding, combat, and health
+- ✅ Type-safe callbacks for all events (pathing, aggro, death, movement)
+- ✅ Replaced Underscore.js `_.indexOf()` with native `Array.indexOf()`
+- ✅ Replaced Underscore.js `_.each()` with `Object.values().forEach()`
+- ✅ Proper typing for path arrays, position tracking, and state management
+- ✅ Protected/private access modifiers for callbacks
+- ✅ Comprehensive JSDoc documentation
+
+#### 10. Mob Class (client/ts/mob.ts)
+
+**Original:** `client/js/mob.js` (12 lines)
+**Converted:** `client/ts/mob.ts` (28 lines)
+
+**Improvements:**
+
+- ✅ Extends TypeScript Character class
+- ✅ Adds aggression mechanics for hostile creatures
+- ✅ Simple, clean inheritance pattern
+
+#### 11. Pathfinder System (client/ts/pathfinder.ts)
+
+**Original:** `client/js/pathfinder.js` (102 lines)
+**Converted:** `client/ts/pathfinder.ts` (167 lines)
+
+**Improvements:**
+
+- ✅ A\* pathfinding algorithm integration
+- ✅ PathfindingEntity interface for type safety
+- ✅ Replaced Underscore.js `_.each()` with native `forEach()`
+- ✅ Type-safe grid operations (2D number arrays)
+- ✅ Better null safety for grid access
+- ✅ Support for incomplete pathfinding (closest reachable point)
+
+#### 12. Bubble System (client/ts/bubble.ts)
+
+**Original:** `client/js/bubble.js` (105 lines)
+**Converted:** `client/ts/bubble.ts` (164 lines)
+
+**Improvements:**
+
+- ✅ Removed jQuery dependency completely
+- ✅ Native DOM manipulation (createElement, querySelector, remove)
+- ✅ Replaced Underscore.js `_.each()` with `Object.values().forEach()`
+- ✅ Type-safe bubble management
+- ✅ Bubble and BubbleManager classes
+- ✅ Better HTML sanitization support
+
 ## Statistics
 
 | Metric               | Count                        |
 | -------------------- | ---------------------------- |
-| Files Converted      | 8                            |
-| Original Lines       | 1,001                        |
-| TypeScript Lines     | 1,869                        |
-| Code Expansion       | +87% (documentation + types) |
+| Files Converted      | 12                           |
+| Original Lines       | 1,775                        |
+| TypeScript Lines     | 2,914                        |
+| Code Expansion       | +64% (documentation + types) |
 | Dependencies Removed | Underscore.js, jQuery        |
 | Type Safety          | 100%                         |
 
@@ -330,7 +385,11 @@ For each file to convert:
 │       ├── sprite.ts           ✅ Complete (320 lines)
 │       ├── tile.ts             ✅ Complete (100 lines)
 │       ├── entity.ts           ✅ Complete (415 lines)
-│       └── item.ts             ✅ Complete (95 lines)
+│       ├── item.ts             ✅ Complete (95 lines)
+│       ├── character.ts        ✅ Complete (686 lines)
+│       ├── mob.ts              ✅ Complete (28 lines)
+│       ├── pathfinder.ts       ✅ Complete (167 lines)
+│       └── bubble.ts           ✅ Complete (164 lines)
 └── docs/
     └── PHASE2_PROGRESS.md      📝 This file
 ```
@@ -368,6 +427,6 @@ None yet! All converted modules compile successfully.
 
 ---
 
-**Last Updated:** 2024-11-09
-**Progress:** 4/50+ files converted (~8%)
+**Last Updated:** 2025-11-09
+**Progress:** 12/50+ files converted (~24%)
 **Status:** On track 🎯

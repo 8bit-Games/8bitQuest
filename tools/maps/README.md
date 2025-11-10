@@ -1,11 +1,8 @@
-BrowserQuest map exporter
-=========================
+# BrowserQuest map exporter
 
-***Disclaimer: due to popular demand we are open sourcing this tool, but please be aware that it was never meant to be publicly released. Therefore the code is messy/non-optimized and the exporting process can be very slow with large map files.***
+**_Disclaimer: due to popular demand we are open sourcing this tool, but please be aware that it was never meant to be publicly released. Therefore the code is messy/non-optimized and the exporting process can be very slow with large map files._**
 
-
-Editing the map
----------------
+## Editing the map
 
 Install the Tiled editor: http://www.mapeditor.org/
 
@@ -13,9 +10,7 @@ Open the `tmx/map.tmx` file in Tiled and start editing.
 
 **Note:** there currently is no documentation on how to edit BrowserQuest-specific objects/layers in Tiled. Please refer to `tmx/map.tmx` as an example if you want to create your own map.
 
-
-Using the exporter
-------------------
+## Using the exporter
 
 This tool is to be used from the command line after the TMX file has been saved from the Tiled editor.
 
@@ -38,9 +33,7 @@ You must run both commands in order to export the client and server map files. T
 
 **Warning:** depending on the `.tmx` filesize, the exporting process can take up to several minutes.
 
-
-Things to know
---------------
+## Things to know
 
 The client map export will create two almost identical files: `world_client.js` and `world_client.json`
 These are both required because, depending on the browser, the game will load the map either by using a web worker (loading `world_client.js`), or via Ajax (loading `world_client.json`).
@@ -57,15 +50,12 @@ Depending on what you want to change, it's therefore not always needed to export
 3. The processed map object is saved as the final world map JSON file(s) in the appropriate directories.
 4. The temporary file from step 1. is deleted.
 
-
 **Known bugs:**
- 
+
     * There currently needs to be an empty layer at the bottom of the Tiled layer stack or else the first terrain layer will be missing.
       (ie. if you remove the "don't remove this layer" layer from the `map.tmx` file, the 'sand' tiles will be missing on the beach.)
-    
 
-Contributing / Ideas for improvement
-------------------------------------
+## Contributing / Ideas for improvement
 
 Here are a few ideas for anyone who might want to help make this tool better:
 
@@ -83,9 +73,7 @@ Here are a few ideas for anyone who might want to help make this tool better:
 
 - A complete rewrite of this tool using a custom Tiled plugin would surely be a better approach than the current one. Being able to export directly from Tiled would be much easier to use. Also, the export process is currently too slow.
 
-
 **Additional resources:**
 
 - Tiled editor wiki: https://github.com/bjorn/tiled/wiki
 - TMX map format documentation: https://github.com/bjorn/tiled/wiki/TMX-Map-Format
-

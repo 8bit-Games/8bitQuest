@@ -1,0 +1,225 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [1.2.0] - 2024-11-09
+
+### Added - Phase 2: Core Systems Converted
+
+#### Additional TypeScript Conversions (4 more modules)
+
+- ✅ Converted `client/js/sprite.js` → `client/ts/sprite.ts` (320 lines)
+  - Removed jQuery dependency
+  - SpriteData, AnimationData, SpriteVariant interfaces
+  - Type-safe canvas operations
+  - Better error handling for image loading
+- ✅ Converted `client/js/tile.js` → `client/ts/tile.ts` (100 lines)
+  - Tile and AnimatedTile classes
+  - Additional utility methods (reset, getCurrentFrame, setFrame)
+  - Readonly properties for immutability
+- ✅ Converted `client/js/entity.js` → `client/ts/entity.ts` (415 lines)
+  - Core base class with full type safety
+  - Protected/private access modifiers
+  - Type-safe callbacks with proper signatures
+  - Comprehensive JSDoc documentation
+- ✅ Converted `client/js/item.js` → `client/ts/item.ts` (95 lines)
+  - Extends TypeScript Entity class
+  - ItemType union type for type safety
+  - Override keyword for inherited methods
+
+#### Statistics Update
+
+- **Total Files Converted:** 8 (doubled from v1.1.0)
+- **Total TypeScript Lines:** 1,869 (+123% from v1.1.0)
+- **Dependencies Removed:** jQuery, Underscore.js (both fully removed)
+
+#### Documentation
+
+- ✅ Updated PHASE2_PROGRESS.md with all 8 conversions
+
+### Changed
+
+- 🔄 jQuery completely removed from all converted modules
+- 🔄 All core entity/sprite/rendering classes now type-safe
+- 🔄 Established pattern for class inheritance with TypeScript
+
+---
+
+## [1.1.0] - 2024-11-09
+
+### Added - Phase 2: Client-Side Modernization (Initial)
+
+#### TypeScript Conversions
+
+- ✅ Converted `shared/js/gametypes.js` → `shared/ts/gametypes.ts`
+  - Modern TypeScript enums for Messages, Entities, Orientations
+  - Removed Underscore.js dependency
+  - Type-safe helper functions
+  - Proper interfaces and type definitions
+- ✅ Converted `client/js/timer.js` → `client/ts/timer.ts`
+  - Full type annotations
+  - Additional utility methods (reset, getRemaining, isRunning)
+  - Default parameters
+- ✅ Converted `client/js/animation.js` → `client/ts/animation.ts`
+  - AnimationFrame interface
+  - Type-safe callbacks
+  - Modern string methods
+- ✅ Converted `client/js/transition.js` → `client/ts/transition.ts`
+  - Type-safe transition system
+  - Better null safety
+  - Progress tracking method
+
+#### Documentation
+
+- ✅ Created PHASE2_PROGRESS.md tracking all conversions
+- ✅ Documented conversion patterns and benefits
+
+### Changed
+
+- 🔄 Established patterns for RequireJS → ES6 modules
+- 🔄 Established patterns for Class.extend() → native classes
+- 🔄 Beginning to remove Underscore.js usage
+
+---
+
+## [1.0.0] - 2024-11-09
+
+### Added - Phase 1: Infrastructure Modernization
+
+#### Build System & Tooling
+
+- ✅ Modern package.json with specific dependency versions
+- ✅ Vite for client bundling and development server
+- ✅ TypeScript 5.x configuration for both client and server
+- ✅ ESLint with TypeScript support
+- ✅ Prettier for code formatting
+- ✅ Husky for git hooks
+- ✅ lint-staged for pre-commit checks
+- ✅ Vitest for testing (configured, tests to be added)
+
+#### Development Experience
+
+- ✅ Hot Module Replacement (HMR) during development
+- ✅ VS Code settings and recommended extensions
+- ✅ Environment variable support with .env files
+- ✅ Concurrent dev servers for client and server
+- ✅ TypeScript type checking
+- ✅ Source maps for debugging
+
+#### Project Structure
+
+- ✅ Separated TypeScript configs for client/server/build tools
+- ✅ Modern .gitignore with comprehensive exclusions
+- ✅ Documentation (README.MODERNIZATION.md)
+- ✅ Environment configuration templates
+
+#### Dependencies
+
+- ✅ Upgraded Node.js requirement (v0.4.7 → v20.0.0+)
+- ✅ Modern WebSocket library (`ws` v8.x)
+- ✅ Express.js for HTTP server
+- ✅ Winston for structured logging
+- ✅ Helmet.js for security
+- ✅ CORS support
+- ✅ Modern sanitization libraries
+- ✅ BSON for efficient data transfer
+
+### Changed
+
+- 🔄 Package name: BrowserQuest → 8bitquest
+- 🔄 License clarification (MPL 2.0)
+- 🔄 Repository structure prepared for incremental migration
+
+### Deprecated
+
+- ⚠️ Legacy dependencies (underscore, old WebSocket libs) - to be removed
+- ⚠️ RequireJS/AMD modules - to be replaced with ES modules
+- ⚠️ jQuery - to be removed in favor of native DOM APIs
+
+### Removed
+
+- Nothing yet - maintaining backward compatibility during transition
+
+### Security
+
+- ✅ Updated all dependencies to latest secure versions
+- ✅ Added security headers with Helmet.js
+- ✅ Input validation and sanitization
+- ✅ CORS configuration
+- ✅ Environment variable security
+
+### Migration Notes
+
+#### For Developers
+
+1. Install Node.js v20+ and npm v10+
+2. Run `npm install` to install dependencies
+3. Copy `.env.example` to `.env`
+4. Use `npm run dev` for development
+5. Code will be linted automatically on commit
+
+#### Backward Compatibility
+
+- Original JavaScript code still works
+- Incremental migration strategy allows parallel old/new code
+- Legacy client code served through Vite static file handling
+
+## [0.0.1] - Original BrowserQuest
+
+### Features
+
+- HTML5 Canvas-based MMO game
+- WebSocket multiplayer communication
+- Node.js game server
+- Multiple world instances
+- Achievement system
+- Mobile support
+- Chat system
+- Various enemies and items
+
+---
+
+## Upcoming Changes
+
+### Phase 2: Client-Side Modernization (Planned)
+
+- [ ] Convert JavaScript to TypeScript (incremental)
+- [ ] Replace RequireJS with ES6 modules
+- [ ] Remove jQuery dependency
+- [ ] Remove Underscore.js dependency
+- [ ] Modern state management
+- [ ] Improved rendering pipeline
+
+### Phase 3: Server-Side Modernization (Planned)
+
+- [ ] TypeScript server code
+- [ ] Modern WebSocket implementation
+- [ ] Database integration (PostgreSQL/MongoDB)
+- [ ] Redis for caching
+- [ ] Improved scalability
+
+### Phase 4: Features (Planned)
+
+- [ ] Progressive Web App (PWA)
+- [ ] User authentication
+- [ ] Persistent player data
+- [ ] Admin panel
+- [ ] Enhanced mobile support
+
+### Phase 5: Advanced Features (Planned)
+
+- [ ] More game content
+- [ ] Graphics improvements
+- [ ] Performance optimizations
+- [ ] Cross-platform apps
+- [ ] Comprehensive testing
+
+---
+
+## Version History
+
+- **v1.0.0** - Phase 1 Complete: Modern infrastructure
+- **v0.0.1** - Original BrowserQuest by Mozilla/Little Workshop

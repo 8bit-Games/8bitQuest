@@ -287,16 +287,68 @@ if (isPlayer(kind)) {
 - ✅ Spatial containment checking
 - ✅ Used for collision detection and spawn zones
 
+#### 20. Updater System (client/ts/updater.ts)
+
+**Original:** `client/js/updater.js` (264 lines)
+**Converted:** `client/ts/updater.ts` (308 lines)
+
+**Improvements:**
+
+- ✅ Main game loop update logic
+- ✅ UpdaterGame interface for game dependency
+- ✅ Type-safe character movement and transitions
+- ✅ Animation and tile update management
+- ✅ Camera zoning (screen transitions)
+- ✅ Player aggro checking
+
+#### 21. Storage System (client/ts/storage.ts)
+
+**Original:** `client/js/storage.js` (166 lines)
+**Converted:** `client/ts/storage.ts` (317 lines)
+
+**Improvements:**
+
+- ✅ LocalStorage wrapper with type safety
+- ✅ StorageData, PlayerData, AchievementsData interfaces
+- ✅ Replaced Underscore.js `_.include()` with native `Array.includes()`
+- ✅ Replaced Underscore.js `_.size()` with native `Array.length`
+- ✅ Removed Modernizr dependency (native localStorage check)
+- ✅ Error handling for JSON parsing and storage
+
+#### 22. Configuration (client/ts/config.ts)
+
+**Original:** `client/js/config.js` (18 lines)
+**Converted:** `client/ts/config.ts` (68 lines)
+
+**Improvements:**
+
+- ✅ ServerConfig and GameConfig interfaces
+- ✅ Type-safe configuration objects
+- ✅ Async config loading with fetch API
+- ✅ Removed RequireJS text plugin dependency
+
+#### 23. Detection Utilities (client/ts/detect.ts)
+
+**Original:** `client/js/detect.js` (41 lines)
+**Converted:** `client/ts/detect.ts` (104 lines)
+
+**Improvements:**
+
+- ✅ Browser and device detection utilities
+- ✅ Type-safe detection functions
+- ✅ Native audio format detection (replaced Modernizr)
+- ✅ Window interface augmentation for WebSocket types
+
 ## Statistics
 
-| Metric               | Count                        |
-| -------------------- | ---------------------------- |
-| Files Converted      | 19                           |
-| Original Lines       | 2,289                        |
-| TypeScript Lines     | 3,698                        |
-| Code Expansion       | +62% (documentation + types) |
-| Dependencies Removed | Underscore.js, jQuery        |
-| Type Safety          | 100%                         |
+| Metric               | Count                            |
+| -------------------- | -------------------------------- |
+| Files Converted      | 23                               |
+| Original Lines       | 2,778                            |
+| TypeScript Lines     | 4,495                            |
+| Code Expansion       | +62% (documentation + types)     |
+| Dependencies Removed | Underscore.js, jQuery, Modernizr |
+| Type Safety          | 100%                             |
 
 ## Key Patterns Established
 
@@ -487,7 +539,11 @@ For each file to convert:
 │       ├── player.ts           ✅ Complete (339 lines)
 │       ├── warrior.ts          ✅ Complete (22 lines)
 │       ├── camera.ts           ✅ Complete (161 lines)
-│       └── area.ts             ✅ Complete (60 lines)
+│       ├── area.ts             ✅ Complete (60 lines)
+│       ├── updater.ts          ✅ Complete (308 lines)
+│       ├── storage.ts          ✅ Complete (317 lines)
+│       ├── config.ts           ✅ Complete (68 lines)
+│       └── detect.ts           ✅ Complete (104 lines)
 └── docs/
     └── PHASE2_PROGRESS.md      📝 This file
 ```
@@ -526,5 +582,5 @@ None yet! All converted modules compile successfully.
 ---
 
 **Last Updated:** 2025-11-09
-**Progress:** 19/50+ files converted (~38%)
+**Progress:** 23/50+ files converted (~46%)
 **Status:** On track 🎯

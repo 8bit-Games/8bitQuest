@@ -250,14 +250,51 @@ if (isPlayer(kind)) {
 - ✅ Import and use gametypes rank checking functions
 - ✅ Better null safety throughout
 
+#### 17. Warrior Class (client/ts/warrior.ts)
+
+**Original:** `client/js/warrior.js` (9 lines)
+**Converted:** `client/ts/warrior.ts` (22 lines)
+
+**Improvements:**
+
+- ✅ Extends TypeScript Player class
+- ✅ Default player character class
+- ✅ Clean, simple inheritance pattern
+
+#### 18. Camera System (client/ts/camera.ts)
+
+**Original:** `client/js/camera.js` (93 lines)
+**Converted:** `client/ts/camera.ts` (161 lines)
+
+**Improvements:**
+
+- ✅ Viewport management with type safety
+- ✅ CameraEntity and CameraRenderer interfaces
+- ✅ Type-safe visibility checking
+- ✅ Grid and pixel coordinate conversions
+- ✅ Viewport iteration with callbacks
+- ✅ Mobile/desktop scaling support
+
+#### 19. Area Class (client/ts/area.ts)
+
+**Original:** `client/js/area.js` (25 lines)
+**Converted:** `client/ts/area.ts` (60 lines)
+
+**Improvements:**
+
+- ✅ Rectangular region management
+- ✅ AreaEntity interface for type safety
+- ✅ Spatial containment checking
+- ✅ Used for collision detection and spawn zones
+
 ## Statistics
 
 | Metric               | Count                        |
 | -------------------- | ---------------------------- |
-| Files Converted      | 16                           |
-| Original Lines       | 2,162                        |
-| TypeScript Lines     | 3,455                        |
-| Code Expansion       | +60% (documentation + types) |
+| Files Converted      | 19                           |
+| Original Lines       | 2,289                        |
+| TypeScript Lines     | 3,698                        |
+| Code Expansion       | +62% (documentation + types) |
 | Dependencies Removed | Underscore.js, jQuery        |
 | Type Safety          | 100%                         |
 
@@ -447,7 +484,10 @@ For each file to convert:
 │       ├── exceptions.ts       ✅ Complete (32 lines)
 │       ├── util.ts             ✅ Complete (51 lines)
 │       ├── chest.ts            ✅ Complete (60 lines)
-│       └── player.ts           ✅ Complete (339 lines)
+│       ├── player.ts           ✅ Complete (339 lines)
+│       ├── warrior.ts          ✅ Complete (22 lines)
+│       ├── camera.ts           ✅ Complete (161 lines)
+│       └── area.ts             ✅ Complete (60 lines)
 └── docs/
     └── PHASE2_PROGRESS.md      📝 This file
 ```
@@ -486,5 +526,5 @@ None yet! All converted modules compile successfully.
 ---
 
 **Last Updated:** 2025-11-09
-**Progress:** 16/50+ files converted (~32%)
+**Progress:** 19/50+ files converted (~38%)
 **Status:** On track 🎯
